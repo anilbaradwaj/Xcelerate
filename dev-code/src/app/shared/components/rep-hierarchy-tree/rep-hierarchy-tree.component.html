@@ -1,0 +1,35 @@
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" class="heiarchy-tree">
+
+    <mat-nested-tree-node *matTreeNodeDef="let node"
+                          [ngClass]="'node-level-' + node.order + ' ' + (hasChild(0, node) && treeControl.isExpanded(node) ? 'node-expanded' : 'node-collapsed')">
+        <li>
+            <div class="mat-tree-node-wrapper"
+                 [ngClass]="{'node-root': !node.order, 'node-branch': node.order && hasChild(0, node), 'node-leaf': !hasChild(0, node)}">
+                <div class="mat-tree-node-before">&nbsp;</div>
+                <div class="mat-tree-node" matTreeNodeToggle>
+                    <div>
+                        {{node.value + ': ' + node.geo_id}}
+                    </div>
+                    <div class="text-bold">
+                        <span class="text-uppercase" *ngIf="node.rep_role">{{node.rep_role + ' - '}}</span>
+                        {{node.rep_name}}
+                    </div>
+                </div>
+                <div class="mat-tree-node-after">&nbsp;</div>
+            </div>
+
+
+            <!-- Only branchs have children-->
+            <ng-container  *ngIf="hasChild(0, node)">
+                <ul
+                        [class.heiarchy-tree-invisible]="!treeControl.isExpanded(node)" class="children-wrapper">
+                    <ng-container matTreeNodeOutlet></ng-container>
+                </ul>
+                <div class="last-item-left-border-cover" *ngIf="treeControl.isExpanded(node)"
+                     [ngClass]="(!node.order ? 'node-root ' : 'node-branch ')">
+
+                </div>
+            </ng-container>
+        </li>
+    </mat-nested-tree-node>
+</mat-tree>

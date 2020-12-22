@@ -1,0 +1,80 @@
+@import "./assets/sass/theme/im-theme.scss";
+
+// Apply the common styles from the app theme
+@include im-app-theme-creator($im-app-theme);
+@include im-app-typography($typography-config);
+
+
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin:0px;
+}
+
+.page-container{
+  padding: 10px 15px;
+}
+
+.components-page-container{
+  padding: 10px 15px;
+}
+
+.dis-component{
+  background: #eaeaea;
+}
+
+.dis-component-img{
+  background-color: #fff;
+  text-align: center;
+  padding: 30px 0px;
+  padding-bottom: 0px;
+  min-height: 200px;
+}
+
+.dis-text{
+  font-size: 16px;
+  font-weight: 300;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #767676;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.title{
+  font-size: 24px;
+  font-weight: 500;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #767676;
+}
+
+.types{
+
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: #767676;
+  font-weight: 300;
+  font-size: 14px;
+
+  span{
+    margin-bottom: 15px;
+  }
+
+  ul{
+    list-style: none;
+
+    li{
+      margin-bottom: 10px;
+    }
+
+    li:first-child{
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    li:last-child{
+      margin-bottom: 25px;
+    }
+  }
+
+}

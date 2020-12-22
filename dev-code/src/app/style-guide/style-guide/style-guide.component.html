@@ -1,0 +1,24 @@
+<!--<div class="header">
+  <img class="logo" src="assets/images/logo-2.png" />
+  <span>Xcelerate Design System </span>
+  <ul>
+    <li href="#">Home</li>
+    <li href="#" class="active">Componenents</li>
+    <li href="#">Design</li>
+    <li href="#">Develop</li>
+    <li href="#">Resources</li>
+  </ul>
+</div>-->
+
+<mat-drawer-container>
+  <mat-drawer mode="side" opened class="nav-list">
+    <ngt-nav-list-item *ngFor="let item of navItems" [item]="item" 
+    [class.selected]="item === selectedItem" (click)="onSelect(item)"
+    routerLinkActive="active" 
+    ></ngt-nav-list-item>
+  </mat-drawer>
+  <mat-drawer-content>
+    <!-- <h2 class=""> Componenents </h2> -->
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

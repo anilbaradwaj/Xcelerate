@@ -1,0 +1,13 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  min-width: 300px;
+  width: 96%;
+  margin-left: 18px;
+}
+
+.user-table {
+  overflow: auto;
+  max-height: 500px;
+}

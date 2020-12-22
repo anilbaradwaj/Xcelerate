@@ -1,0 +1,31 @@
+
+// We use .im-app class to override the default angular styling
+.im-app {
+  $icon-size: 36px;
+
+
+      .mat-form-field-prefix {
+        .mat-icon {
+
+        }
+      }
+}
+
+
+
+
+
+
+
+
+
+@mixin im-search-typography($config) {
+  $font-family-condensed: map-get($config, font-family-condensed);
+  $font-family-condensed: if(type-of($font-family-condensed) == string, unquote($font-family-condensed), $font-family-condensed);
+
+  .im-app {
+    .mat-form-field-autofill-control {
+      font-family: $font-family-condensed;
+    }
+  }
+}

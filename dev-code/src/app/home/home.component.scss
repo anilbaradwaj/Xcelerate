@@ -1,0 +1,272 @@
+
+@mixin home-theme($theme){
+    .homepage-container{
+        background-color: #F1F1FF;
+        padding: 0px !important;
+
+        .home-container{
+            display: flex;
+
+            .left-content{
+                width: 70%;
+                display: inline-block;
+                margin-top: 50px;
+
+                .content-box{
+                    margin-left: 23px;
+                    background-color: #FFFFFF;
+                    position: relative;
+                    border-radius: 8px;
+                    margin-right: 40px;
+                    margin-bottom: 35px;
+
+                    .text-box{
+                        width: 55%;
+                        text-align: center;
+                        padding: 30px 61px 0px 63px;
+                        height: 144px;
+                    }
+
+                    .title-txt{
+                        font-size: 24px;
+                        font-weight: 400;
+                        font-family: Roboto, "Helvetica Neue", sans-serif;
+                        color:#011627;
+                        margin-bottom: 10px;
+                    }
+                
+                    .display-content{
+                        font-size: 14px;
+                        font-weight: 100;
+                        font-family: Roboto, "Helvetica Neue", sans-serif;
+                        color:#6f6f6f;
+                        margin-bottom: 20px;
+                        line-height: 23px;
+                    }
+
+                    .mask-img{
+                        position: absolute;
+                        top: -37px;
+                        right: 15px;
+
+                        img{
+                            width: 195px;
+                        }
+                    }
+
+                    .watch-video{
+                        padding: 10px 40px;
+                        background-color: #003189;
+                        color: #fff;
+                        font-family: Roboto, "Helvetica Neue", sans-serif;
+                        font-size: 14px;
+                        border-radius: 20px;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                    }
+                }
+
+                .content-box-1{
+                    margin-left: 23px;
+                    background-color: #FFFFFF;
+                    position: relative;
+                    border-radius: 8px;
+                    margin-right: 40px;
+                    margin-bottom: 35px;
+                    height: 176px;
+
+                    .text-box{
+                        width: 60%;
+                        margin-left: 326px;
+                        display: flex;
+
+                        span{
+                            display: inline-block;
+                            width: 45%;
+                            margin-top: 20px;
+                            margin-left: 15px;
+
+                            &:first-child{
+                                border-right: 1px solid #8892A0;
+                                display: inline-block;
+
+                                .display-content{
+                                    margin-bottom: 10px;
+                                }
+                            }
+
+                            &:last-child{
+                                .display-content{
+                                    width: 85%;
+                                    margin-bottom: 33px;
+                                }
+                            }
+                        }
+                    }
+
+                    .title-txt{
+                        font-size: 24px;
+                        font-weight: 400;
+                        font-family: Roboto, "Helvetica Neue", sans-serif;
+                        color:#011627;
+                        margin-bottom: 15px;
+                    }
+                
+                    .display-content{
+                        font-size: 14px;
+                        font-weight: 100;
+                        font-family: Roboto, "Helvetica Neue", sans-serif;
+                        color: #6f6f6f;
+                        line-height: 23px;
+                    }
+
+                    .button-txt a{
+                        display: flex;
+                        font-family: Roboto, "Helvetica Neue", sans-serif;
+                        font-size: 13px;
+                        font-weight: 400;
+                        color: #003189;
+                        cursor: pointer;
+                        text-decoration: none;
+
+                        img{
+                            margin-top: 0px;
+                            margin-left: 10px;
+                            height: 18px;
+                        }
+                    }
+
+                    .mask-img{
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+
+                        img{
+                            width: 310px;
+                        }
+                    }
+                }
+            }
+    
+            .right-content{
+                width: 30%;
+                background-color: #F7F7FF;
+                display: inline-block;
+                height: 100%;
+
+                .content-box{
+                    background-color: #FFFFFF;
+                    position: relative;
+                    border-radius: 8px;
+                    margin-bottom: 10px;
+                    margin-left: 25px;
+                    width: 85%;
+                    margin-top: 20px;
+
+                    .comming-soon{
+                        background-color: #25B8651C;
+                        color: #25B865;
+                        float: right;
+                        padding: 5px 10px;
+                        border-radius: 10px;
+                        font-size: 11px;
+                        margin-left: 60px;
+                        margin-right: 11px;
+                        margin-top: 50px;
+                    }
+
+                    .text-box{
+                        text-align: left;
+                        padding: 15px;
+                        padding-top: 50px;
+                    }
+
+                    .title-txt{
+                        font-size: 20px;
+                        font-weight: 400;
+                        font-family: Roboto, "Helvetica Neue", sans-serif;
+                        color:#011627;
+                        margin-bottom: 15px;
+                    }
+                
+                    .display-content{
+                        font-size: 14px;
+                        font-weight: 100;
+                        font-family: Roboto, "Helvetica Neue", sans-serif;
+                        color: #6f6f6f; 
+                        margin-bottom: 0px;
+                        line-height: 23px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @mixin home-theme($theme){
+//     .home-container{
+//         padding: 20px 370px;
+//         text-align: center;
+    
+//         .title-txt{
+//             font-size: 24px;
+//             font-weight: 400;
+//             font-family: Roboto, "Helvetica Neue", sans-serif;
+//             color: #767676;
+//             margin-bottom: 15px;
+//         }
+    
+//         .display-content{
+//             font-size: 16px;
+//             font-weight: 100;
+//             font-family: Roboto, "Helvetica Neue", sans-serif;
+//             color: #767676;
+//             margin-bottom: 30px;
+//             line-height: 23px;
+//         }
+        
+    
+//         .home-logo{
+//             // height: 100px;
+//             margin-bottom: 20px;
+//         }
+    
+//         .action-buttons{
+            
+//             span{
+//                 padding: 10px 50px !important;
+//                 border: 1px solid #ccc;
+//                 cursor: pointer;
+//                 font-family: Roboto, "Helvetica Neue", sans-serif;
+//                 font-weight: 400;
+//                 text-transform: uppercase;
+//                 font-size: 14px;
+
+//                 &:hover{
+//                     background-color: #fafafa;
+//                 }
+
+//                 a{
+//                     text-decoration: unset;
+//                     color: #000000;
+//                 }
+//             }
+
+//             .watch-video{
+//                 padding: 10px 50px !important;
+//                 margin-left: 15px;
+
+//                 div{
+//                     display: inline-block;
+//                 }
+
+//                 mat-icon{
+//                     position: absolute;
+//                     margin-top: -18px;
+//                     margin-left: -29px;
+//                 }
+//             }
+//         }
+//     }
+// }
+

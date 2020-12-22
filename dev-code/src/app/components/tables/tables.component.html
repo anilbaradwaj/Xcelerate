@@ -1,0 +1,66 @@
+<div>
+    <i></i>
+</div>
+<br/>
+
+<div class="components-page-container">
+    <h2 class="title">
+        Data tables
+    </h2>
+    <span class="dis-text">
+        Data tables display sets of data across rows and columns..
+    </span>
+    
+    <mat-card class="dis-component">
+        <mat-card-content class="dis-component-img">
+            <div class="table-container">
+                <mat-table #table [dataSource]="dataSource" (scroll)="tableScroll($event)" class="user-table">
+                    <ng-container matColumnDef="id">
+                        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+                    </ng-container>
+            
+                    <ng-container matColumnDef="firstName">
+                        <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+                    </ng-container>
+            
+                    <ng-container matColumnDef="lastName">
+                        <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
+                    </ng-container>
+            
+                    <ng-container matColumnDef="email">
+                        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+                    </ng-container>
+            
+                    <ng-container matColumnDef="gender">
+                        <mat-header-cell *matHeaderCellDef> Gender (center) </mat-header-cell>
+                        <mat-cell *matCellDef="let element" class="text-center"> {{element.gender}} </mat-cell>
+                    </ng-container>
+            
+                    <ng-container matColumnDef="ipAddress">
+                        <mat-header-cell *matHeaderCellDef > IP Address (right)</mat-header-cell>
+                        <mat-cell *matCellDef="let element" class="text-right"> {{element.ipAddress}} </mat-cell>
+                    </ng-container>
+            
+                    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+<div class="types">
+    <span>
+      <ul>
+        <li>Classes</li>
+        <li>A. text-center</li> 
+        <li>b. text-right</li> 
+        <li>Use the "a" , "b" classes on mat-cell elements to change the justification of a column or column header</li>
+      </ul>
+    </span>
+</div>

@@ -1,0 +1,202 @@
+
+$node-vertical-padding: 5px;
+$node-horizontal-padding: 20px;
+$node-height: 80px;
+$node-border-height: 1px;
+$node-left-margin: 20px;
+$node-top-margin: 20px;
+$node-left-border-width: 10px;
+$node-background-color: white;
+
+
+@mixin heirarchy-tree-base() {
+  .heiarchy-tree {
+    display: flex;
+
+    .heiarchy-tree-invisible {
+      display: none;
+    }
+
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    ul {
+      margin-left: $node-left-margin;
+    }
+
+    li {
+      padding-top: $node-top-margin;
+    }
+
+    .mat-tree-node {
+      height: $node-height - ($node-vertical-padding*2) - ($node-border-height * 2) - $node-top-margin;
+      flex-basis: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: $node-vertical-padding $node-horizontal-padding;
+      border-bottom-right-radius: 10px;
+
+      //min-width: 100px;
+      white-space: nowrap;
+    }
+
+    .mat-tree-node-after {
+      flex: 10000;
+    }
+
+
+
+    .node-root.mat-tree-node-wrapper {
+      >.mat-tree-node-after {
+        min-width: 20px;
+        height: 1px;
+      }
+
+      >.mat-tree-node-before {
+        display: none;
+      }
+    }
+
+
+    .mat-tree-node-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+
+    .last-item-left-border-cover {
+      height: (($node-height - $node-top-margin) / 2) - 1;
+      width: $node-border-height;
+      position: relative;
+      left: $node-left-margin;
+      top: -((($node-height - $node-top-margin) / 2) - 1);
+    }
+
+    .node-leaf.mat-tree-node-wrapper,
+    .node-branch.mat-tree-node-wrapper {
+      >.mat-tree-node-before {
+        width: 20px;
+        height: 1px;
+      }
+
+
+    }
+
+    .node-branch, .node-root {
+      > .mat-tree-node {
+        cursor: pointer;
+      }
+    }
+
+
+    .children-wrapper {
+      //border-left: solid 1px blue;
+    }
+
+  }
+}
+
+
+@mixin heirarchy-tree-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  $outline-color: mat-color( map-get($theme, foreground), divider);
+  $node-border-color: mat-color($accent, 500);
+  $tree-background-color: mat-color($background, background);
+
+  .im-app {
+    .mat-tree.heiarchy-tree {
+      background-color: $tree-background-color;
+
+      .last-item-left-border-cover {
+        background-color: $tree-background-color;
+      }
+
+      .mat-tree-node {
+        border: solid $node-border-height $node-border-color;
+        background-color: $node-background-color;
+
+      }
+
+      ul {
+        border-left: solid $node-border-height $outline-color;
+      }
+
+      .mat-tree-node-before {
+        background-color: $outline-color;
+      }
+
+      .node-root.mat-tree-node-wrapper {
+        .mat-tree-node-after {
+          background-color: $outline-color;
+        }
+      }
+
+      .node-level-0:last-child {
+        .node-root.mat-tree-node-wrapper {
+          >.mat-tree-node-after {
+            background-color: transparent;
+          }
+
+        }
+      }
+
+      // Apply the level specific colors to each control
+      @for $i from 0 through 2 {
+        // These colors are applied in order by level
+        $color-list: #e4985c, #128c61, #6e819b;
+
+
+        .node-level-#{$i} {
+          >li {
+            >.mat-tree-node-wrapper {
+              &.node-root, &.node-branch {
+                > .mat-tree-node {
+                  border-left: solid $node-left-border-width nth($color-list, $i + 1);
+
+                  &:hover {
+                    background-color: transparentize(nth($color-list, $i + 1), .95);
+                  }
+
+                  &:active {
+                    background-color: transparentize(nth($color-list, $i + 1), .75);
+                  }
+                }
+              }
+
+              &.node-leaf {
+                >.mat-tree-node {
+                  border-left: solid $node-left-border-width nth($color-list, $i + 1);
+                }
+              }
+            }
+          }
+
+          &.node-expanded {
+            >li {
+              >.mat-tree-node-wrapper {
+                >.mat-tree-node {
+                  background-color: transparentize(nth($color-list, $i + 1), .75);
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+
+

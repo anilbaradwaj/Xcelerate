@@ -1,0 +1,36 @@
+<div class="header">
+    <img class="logo" src="assets/images/logo-2.PNG" />
+    <span>Design System </span>
+    <ul>
+        <li routerLinkActive="active">
+            <a routerLink="/home">
+                Home
+            </a>
+        </li>
+        <li routerLinkActive="active" >
+            <a [routerLink]="['/style-guide/components/typeography']">
+                Componenents
+            </a>
+        </li>
+        <li href="#">Design</li>
+        <li href="#">Develop</li>
+        <li routerLinkActive="active">
+            <a routerLink="/resources/downloads/brandguidelines">
+                Resources
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- <ngt-resources *ngIf="resource"></ngt-resources>
+<ngt-style-guide *ngIf="component"></ngt-style-guide> -->
+
+<router-outlet></router-outlet>
+
+
+
+
+<!-- resources/downloads/buttons -->
+<!-- /style-guide/components/buttons -->
+
+
+

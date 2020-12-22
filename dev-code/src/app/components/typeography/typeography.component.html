@@ -1,0 +1,96 @@
+
+
+<div class="components-page-container">
+    <h2 class="title">
+        Typography
+    </h2>
+    <span class="dis-text">
+        a robust typeface with legible numbers that renders well at all sizes. It is sharp and friendly, yet plain enough to get out
+        of the way and let the user’s designs shine.
+    </span>
+    
+    <mat-card class="dis-component">
+        <mat-card-content class="dis-component-img">
+            <img src="assets/images/components/typography-1.jpg" >
+        </mat-card-content>
+    </mat-card>
+
+
+    <div class="types">
+        <span>
+          <ul>
+            <li>Type Scale for Styling</li>
+            <li>The type scale is a combination of 13 styles that are supported by the type system. <br>
+                It contains reusable categories of text, each with an intended application and meaning.</li>
+            <li>1P - First Priority</li>
+            <li>2P - Second Priority</li>
+            <li>3P - Third Priority</li>
+            <li>4P - Fourth Priority</li>
+          </ul>
+        </span>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="">
+        <!-- Position Column -->
+        <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="subtitle">
+        <th mat-header-cell *matHeaderCellDef> Subtitle </th>
+        <td mat-cell *matCellDef="let element"> {{element.subtitle}} </td>
+        </ng-container>
+    
+        <!-- Weight Column -->
+        <ng-container matColumnDef="bodytext">
+        <th mat-header-cell *matHeaderCellDef> Body Text </th>
+        <td mat-cell *matCellDef="let element"> {{element.bodytext}} </td>
+        </ng-container>
+    
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="button">
+        <th mat-header-cell *matHeaderCellDef> Button </th>
+        <td mat-cell *matCellDef="let element"> {{element.button}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="textlink">
+        <th mat-header-cell *matHeaderCellDef> Text Link </th>
+        <td mat-cell *matCellDef="let element"> {{element.textlink}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="caption">
+        <th mat-header-cell *matHeaderCellDef> Caption </th>
+        <td mat-cell *matCellDef="let element"> {{element.caption}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="overline">
+        <th mat-header-cell *matHeaderCellDef> Overline </th>
+        <td mat-cell *matCellDef="let element"> {{element.overline}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
+<!--NOTE The addtion of mat-typography to get the classes to apply to standard h elements-->
+<!-- <mat-card>
+    <mat-card-title>
+        Typography
+    </mat-card-title>
+    <mat-card-content class="mat-typography">
+        <h1>H1</h1>
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <h3>H4</h3>
+    
+        <div>
+            <p>paragraph</p>
+        </div>
+    </mat-card-content>
+</mat-card> -->

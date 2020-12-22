@@ -1,0 +1,21 @@
+
+table{
+    width: 93%;
+    margin-left: 32px;
+    margin-bottom: 30px;
+}
+
+.types{
+    margin-top: 50px;
+    ul{
+        li:first-child{
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        li{
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+    }
+}
